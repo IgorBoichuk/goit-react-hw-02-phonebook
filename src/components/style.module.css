@@ -1,0 +1,32 @@
+.wrapper {
+}
+
+.title {
+  font-size: 50px;
+}
+
+.text {
+  font-size: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.forminput {
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  border-radius: 50px;
+}
+
+.button {
+  /* width: 100px; */
+  padding: 10px;
+
+  border-radius: 50px;
+}

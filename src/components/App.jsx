@@ -1,10 +1,18 @@
 import { Component } from 'react';
 import { ContactForm } from './contact-form/ContactForm';
+import style from './style.module.css';
 
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    filter: '',
     name: '',
+    number: '',
   };
   render() {
     return (
@@ -13,19 +21,17 @@ export class App extends Component {
           height: '100vh',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
           color: '#010101',
         }}
       >
         <div>
-          <h1>Phonebook</h1>
+          <h1 className={style.title}>Phonebook</h1>
           <ContactForm />
 
-          <h2>Contacts</h2>
+          <h2 className={style.text}>Contacts</h2>
           {/* <Filter ... /> */}
-          {/* <ContactList ... /> */}
         </div>
+        {/* <ContactList ... /> */}
         {/* <Input /> */}
       </div>
     );
