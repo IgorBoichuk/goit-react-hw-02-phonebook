@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import { ContactForm } from './contact-form/ContactForm';
+import { ContactList } from './contact-list/ContactList';
+
 import style from './style.module.css';
 
 export class App extends Component {
@@ -32,9 +34,9 @@ export class App extends Component {
           <ContactForm formSubmitHandler={this.formSubmitHandler} />
 
           <h2 className={style.text}>Contacts</h2>
-          {/* <Filter ... /> */}
+          <ContactList contacts={this.state.contacts} />
         </div>
-        {/* <ContactList ... /> */}
+        {/* <Filter ... /> */}
         {/* <Input /> */}
       </div>
     );
