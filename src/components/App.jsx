@@ -40,8 +40,11 @@ export class App extends Component {
       <div
         style={{
           height: '100vh',
+          width: '400px',
           display: 'flex',
-          justifyContent: 'center',
+          flexDirection: 'column',
+          // justifyContent: 'center',
+          marginLeft: '150px',
           color: '#010101',
         }}
       >
@@ -52,14 +55,13 @@ export class App extends Component {
             contacts={this.state.contacts}
           />
           <Filter changeFilterInput={this.changeFilterInput} />
-
-          <h2 className={style.text}>Contacts</h2>
-          <ContactList
-            contacts={this.state.contacts}
-            filter={this.state.filter}
-            handleDeleteContact={this.handleDeleteContact}
-          />
         </div>
+        <h2 className={style.text}>Contacts</h2>
+        <ContactList
+          contacts={this.state.contacts}
+          filter={this.state.filter}
+          handleDeleteContact={this.handleDeleteContact}
+        />
         {/* <Input /> */}
       </div>
     );

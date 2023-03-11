@@ -36,5 +36,5 @@ export const ContactList = ({ contacts, filter, handleDeleteContact }) => {
       }
     }
   });
-  return <ul>{newContactList}</ul>;
+  return <ul className={style.contactlist}>{newContactList}</ul>;
 };
