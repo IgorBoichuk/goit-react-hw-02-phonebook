@@ -8,6 +8,19 @@ export class ContactForm extends Component {
     number: '',
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  onHandleAddBtn = event => {
+    // const { target } = event;
+    console.log(event.target.name);
+  };
+
   render() {
     return (
       <div className={style.wrapper}>
@@ -18,6 +31,8 @@ export class ContactForm extends Component {
           <input
             type="text"
             name="name"
+            value={this.state.name}
+            onChange={this.handleInputChange}
             className={style.forminput}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -29,12 +44,19 @@ export class ContactForm extends Component {
           <input
             type="tel"
             name="number"
+            value={this.state.number}
+            onChange={this.handleInputChange}
             className={style.forminput}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-          <button type="button" name="addButton" className={style.button}>
+          <button
+            type="button"
+            name="addButton"
+            onClick={this.onHandleAddBtn}
+            className={style.button}
+          >
             Add contact
           </button>
         </form>
