@@ -13,11 +13,9 @@ export class App extends Component {
     filter: '',
   };
 
-  // constructor() {
-  //   super();
-  //   this.onHandleAddBtn = this.onHandleAddBtn.bind(this);
-  //   this.handleInputChange = this.handleInputChange.bind(this);
-  // }
+  formSubmitHandler = data => {
+    console.log(data);
+  };
 
   render() {
     return (
@@ -31,7 +29,7 @@ export class App extends Component {
       >
         <div>
           <h1 className={style.title}>Phonebook</h1>
-          <ContactForm />
+          <ContactForm formSubmitHandler={this.formSubmitHandler} />
 
           <h2 className={style.text}>Contacts</h2>
           {/* <Filter ... /> */}

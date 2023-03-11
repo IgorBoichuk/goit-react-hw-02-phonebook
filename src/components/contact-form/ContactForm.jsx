@@ -16,9 +16,15 @@ export class ContactForm extends Component {
     });
   };
 
-  onHandleAddBtn = event => {
+  onHandleAddBtn = () => {
     // const { target } = event;
-    console.log(event.target.name);
+    // console.log(event.target.name);
+    this.props.formSubmitHandler(this.state);
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
   };
 
   render() {
