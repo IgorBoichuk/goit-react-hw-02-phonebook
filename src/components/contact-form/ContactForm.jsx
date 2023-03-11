@@ -17,10 +17,28 @@ export class ContactForm extends Component {
   };
 
   onHandleAddBtn = () => {
-    // const { target } = event;
     // console.log(event.target.name);
-    this.props.formSubmitHandler(this.state);
-    this.reset();
+    /*
+    1. Creteat flag of status = false
+    2. For each arr contacts 
+    2.1 Check name with state.name
+    2.2 If same name flag of status set true
+    3. If flag of status = false -> create new contact  else alert("we have this conact")
+    */
+
+    let chackName = false;
+
+    this.props.contacts.forEach(contact => {
+      if (contact.name === this.state.name) {
+        chackName = true;
+      }
+    });
+    if (chackName) {
+      alert(`${this.state.name} is olready in contacts`);
+    } else {
+      this.props.formSubmitHandler(this.state);
+      this.reset();
+    }
   };
 
   reset = () => {
