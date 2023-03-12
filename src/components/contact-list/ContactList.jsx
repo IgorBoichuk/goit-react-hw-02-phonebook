@@ -1,5 +1,7 @@
 import style from '../style.module.css';
 
+import PropTypes from 'prop-types';
+
 export const ContactList = ({ contacts, filter, handleDeleteContact }) => {
   const onClickToDelete = event => {
     handleDeleteContact(event.target.id);
@@ -37,4 +39,9 @@ export const ContactList = ({ contacts, filter, handleDeleteContact }) => {
     }
   });
   return <ul className={style.contactlist}>{newContactList}</ul>;
+};
+
+ContactList.prototype = {
+  filter: PropTypes.string.isRequired,
+  contacts: PropTypes.array.isRequired,
 };

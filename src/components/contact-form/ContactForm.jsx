@@ -17,15 +17,6 @@ export class ContactForm extends Component {
   };
 
   onHandleAddBtn = () => {
-    // console.log(event.target.name);
-    /*
-    1. Creteat flag of status = false
-    2. For each arr contacts 
-    2.1 Check name with state.name
-    2.2 If same name flag of status set true
-    3. If flag of status = false -> create new contact  else alert("we have this conact")
-    */
-
     let chackName = false;
 
     this.props.contacts.forEach(contact => {
